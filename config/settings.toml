@@ -1,0 +1,51 @@
+# Alle Parameter an einem Ort. Begründungen: docs/01_entscheidungen.md.
+
+[risk]
+max_position_eur = 1000.0     # Obergrenze je Position (E-003)
+max_loss_eur = 100.0          # so viel darf ein Fehlkauf höchstens kosten (E-003)
+max_stop_distance = 0.10      # Stop weiter weg als 10 % → kein Kauf (E-003)
+atr_days = 14
+atr_multiple = 2.0            # Stop = Kurs − 2 × ATR (E-004)
+swing_low_days = 10           # … oder knapp unter dem Tief dieser Tage, der tiefere Wert zählt
+swing_low_buffer = 0.01
+
+[rules]
+# Säule 4: Umfeld (E-005)
+market_ticker = "^990100-USD-STRD"   # MSCI World (Kursindex), nur für den Trend
+trend_sma_days = 200
+fast_sma_days = 50
+momentum_days = 252                 # 12 Monate …
+momentum_skip_days = 21             # … ohne den letzten Monat
+max_return_1m = 0.15                # nicht nach > +15 % im letzten Monat kaufen
+max_above_fast_sma = 0.10           # nicht > 10 % über der 50-Tage-Linie
+earnings_block_days = 7             # keine Käufe 7 Tage vor Quartalszahlen
+# Säule 2: Bestätigung — im Backtest (Lauf 0) schlechter als ohne, daher aus (E-006)
+confirmation = false
+ema_days = 20
+pullback_days = 10
+
+[backtest]
+start = "2005-01-01"
+fee_per_order = 1.0                 # Scalable: 0,99 € je Order (laut Abrechnungen 2026)
+half_spread = 0.001
+# Querschnitt aus Gewinnern UND Verlierern, damit nicht nur bekannte Sieger
+# getestet werden (E-008).
+tickers = ["NVDA", "AAPL", "MSFT", "AMZN", "GOOGL", "ASML", "JNJ", "KO",
+           "SAP.DE", "INTC", "PYPL", "NKE", "BAYN.DE", "BAS.DE", "VNA.DE",
+           "DBK.DE", "ENR.DE", "IFX.DE", "VOW3.DE", "DTE.DE"]
+benchmark = "^990100-USD-STRD"
+
+[tax]
+capital_gains_rate = 0.25
+solidarity_surcharge = 0.055
+church_tax_rate = 0.0
+partial_exemption = 0.0             # Aktien: keine Teilfreistellung
+annual_allowance = 0.0
+
+# ------------------------------------------------------------------ Watchlist
+# ticker = Yahoo-Symbol. Optional je Eintrag: max_position_eur, max_loss_eur.
+
+[[watchlist]]
+ticker = "ENR.DE"
+name = "Siemens Energy"
+note = "Korrektur seit Hoch 04/2026 (−32 %), warten auf Trendwende"

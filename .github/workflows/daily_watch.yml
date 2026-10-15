@@ -1,0 +1,53 @@
+name: Daily Watch
+
+# Mo–Fr 21:30 UTC: nach Xetra- (15:30 UTC) und US-Schluss (20:00/21:00 UTC).
+# Telegram nur bei Statusänderung; data/state.json wird zurückcommittet.
+on:
+  schedule:
+    - cron: "30 21 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      always:
+        description: "Alles senden, nicht nur Änderungen"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+      - name: Prüfen
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event.inputs.always }}" = "true" ]; then
+            python run_watch.py --always
+          else
+            python run_watch.py
+          fi
+      - name: Status speichern
+        run: |
+          git config user.name "entry-watcher"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/state.json
+          if git diff --cached --quiet; then echo "keine Änderung"; exit 0; fi
+          git commit -m "Status $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          exit 1
