@@ -1,5 +1,19 @@
 # 05 – Ergebnisse
 
+## Lauf 3 — 2026-10-15: Stop-Abstand bis 15 % (E-016)
+
+| Variante | Trades | GuV vor Steuer | Steuer | CAGR vor St. | CAGR nach St. |
+|---|---:|---:|---:|---:|---:|
+| **Standard: Stop 3×ATR, Grenze 15 %** | 1872 | 20.455 € | 5.395 € | 3,4 % | **2,7 %** |
+| Stop 2×ATR | 3292 | 12.516 € | 3.301 € | 2,4 % | 1,8 % |
+| Stop 3×ATR mit Bestätigung | 1395 | 10.419 € | 2.748 € | 2,0 % | 1,6 % |
+| MSCI World (Kursindex) | 1 | 57.725 € | 10.657 € | 6,7 % | 6,0 % |
+
+Gegen Lauf 2 (Grenze 10 %): gleiche Rendite, 118 Trades mehr, und **16 statt 12
+von 20 Aktien im Plus** (u. a. Siemens Energy +529 € statt −436 €, Bayer
++1.685 €, VW +1.029 €). Ø Verlust je Trade −27 bis −70 €; schlechtester Trade
+weiterhin Siemens Energy −344 € (Kurslücke 2023).
+
 ## Lauf 2 — 2026-10-15: Standard auf 3×ATR umgestellt (E-015)
 
 Gleiche Daten und Aktien wie Lauf 1, nur der Standard-Stop ist jetzt 3×ATR.

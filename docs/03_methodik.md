@@ -13,7 +13,7 @@ Alle Werte aus Tagesschlusskursen bis einschließlich heute.
 | Nicht überdehnt | Schluss höchstens 10 % über der 50-Tage-Linie |
 | Termin | keine Quartalszahlen in den nächsten 7 Tagen (nur live) |
 | Bestätigung (aus) | Tief ≤ EMA20 in den letzten 10 Tagen, heute Schluss > EMA20 und > Vortageshoch |
-| Stop-Abstand | Anfangsstop höchstens 10 % unter dem Schluss |
+| Stop-Abstand | Anfangsstop höchstens 15 % unter dem Schluss (E-016) |
 
 Status **KAUFEN ERLAUBT**, wenn alle Regeln erfüllt sind und mindestens eine Aktie ins Budget passt; sonst **WARTEN**.
 

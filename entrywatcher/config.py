@@ -13,7 +13,7 @@ DEFAULT_PATH = Path(__file__).resolve().parent.parent / "config" / "settings.tom
 class RiskSettings:
     max_position_eur: float = 1000.0
     max_loss_eur: float = 100.0
-    max_stop_distance: float = 0.10
+    max_stop_distance: float = 0.15
     atr_days: int = 14
     atr_multiple: float = 3.0
     swing_low_days: int = 10
