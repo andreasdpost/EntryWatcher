@@ -15,7 +15,7 @@ class RiskSettings:
     max_loss_eur: float = 100.0
     max_stop_distance: float = 0.10
     atr_days: int = 14
-    atr_multiple: float = 2.0
+    atr_multiple: float = 3.0
     swing_low_days: int = 10
     swing_low_buffer: float = 0.01
 

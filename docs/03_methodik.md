@@ -20,9 +20,9 @@ Status **KAUFEN ERLAUBT**, wenn alle Regeln erfüllt sind und mindestens eine Ak
 ## Stop und Größe
 
 - ATR(14) = Durchschnitt der „wahren Spanne“ der letzten 14 Tage (Hoch − Tief, inkl. Lücken zum Vortagesschluss).
-- Anfangsstop = min(Schluss − 2 × ATR, 10-Tage-Tief × 0,99).
+- Anfangsstop = min(Schluss − 3 × ATR, 10-Tage-Tief × 0,99).
 - Stückzahl = abrunden(min(1.000 €, 100 € / Stop-Abstand) / Kurs).
-- Nach dem Kauf: Stop = max(Anfangsstop, höchster Schluss seit Kauf − 2 × ATR). Fällt der Schluss darunter → **VERKAUFEN**.
+- Nach dem Kauf: Stop = max(Anfangsstop, höchster Schluss seit Kauf − 3 × ATR). Fällt der Schluss darunter → **VERKAUFEN**.
   In Scalable setzt du den Stop als Stop-Loss-Order und ziehst ihn nach, wenn der Wächter einen neuen Wert meldet.
 
 ## Backtest

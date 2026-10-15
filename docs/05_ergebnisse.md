@@ -1,5 +1,21 @@
 # 05 – Ergebnisse
 
+## Lauf 2 — 2026-10-15: Standard auf 3×ATR umgestellt (E-015)
+
+Gleiche Daten und Aktien wie Lauf 1, nur der Standard-Stop ist jetzt 3×ATR.
+
+| Variante | Trades | GuV vor Steuer | Steuer | CAGR vor St. | CAGR nach St. |
+|---|---:|---:|---:|---:|---:|
+| **Standard: Stop 3×ATR, ohne Bestätigung** | 1754 | 19.749 € | 5.209 € | 3,4 % | **2,7 %** |
+| Stop 2×ATR, ohne Bestätigung | 3233 | 12.608 € | 3.325 € | 2,4 % | 1,9 % |
+| Stop 3×ATR, mit Bestätigung | 1280 | 9.450 € | 2.581 € | 1,9 % | 1,4 % |
+| MSCI World (Kursindex, ohne Dividenden) | 1 | 57.725 € | 10.657 € | 6,7 % | 6,0 % |
+
+Die Bestätigungsregel verschlechtert auch mit 3×ATR (E-006 bleibt).
+Folge im Alltag: Siemens Energy (ATR 4,3 %) hat am 2026-10-15 einen Stop-Abstand
+von 12,8 % und bekäme selbst bei intaktem Trend kein KAUFEN, solange die
+10-%-Grenze gilt.
+
 ## Lauf 1 — 2026-10-15
 
 Bericht von `python run_backtest.py`:

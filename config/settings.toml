@@ -5,7 +5,7 @@ max_position_eur = 1000.0     # Obergrenze je Position (E-003)
 max_loss_eur = 100.0          # so viel darf ein Fehlkauf höchstens kosten (E-003)
 max_stop_distance = 0.10      # Stop weiter weg als 10 % → kein Kauf (E-003)
 atr_days = 14
-atr_multiple = 2.0            # Stop = Kurs − 2 × ATR (E-004)
+atr_multiple = 3.0            # Stop = Kurs − 3 × ATR (E-004, E-015)
 swing_low_days = 10           # … oder knapp unter dem Tief dieser Tage, der tiefere Wert zählt
 swing_low_buffer = 0.01
 

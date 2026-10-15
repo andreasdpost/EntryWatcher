@@ -21,9 +21,9 @@ class Variant:
     confirmation: bool
 
 
-VARIANTS = (Variant("Standard: Stop 2×ATR, ohne Bestätigung", 2.0, False),
-            Variant("Stop 3×ATR, ohne Bestätigung", 3.0, False),
-            Variant("Stop 2×ATR, mit Bestätigung", 2.0, True))
+VARIANTS = (Variant("Standard: Stop 3×ATR, ohne Bestätigung", 3.0, False),
+            Variant("Stop 2×ATR, ohne Bestätigung", 2.0, False),
+            Variant("Stop 3×ATR, mit Bestätigung", 3.0, True))
 
 
 @dataclass(frozen=True)

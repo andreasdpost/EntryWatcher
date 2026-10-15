@@ -18,3 +18,4 @@ Neue Einträge unten anhängen; alte nicht umschreiben, sondern ablösen.
 | E-012 | 2026-10-15 | Täglicher Lauf Mo–Fr 21:30 UTC per GitHub Action, Telegram nur bei Statusänderung; Status in `data/state.json` | Wie in den anderen Repos; keine Nachrichtenflut | Claude |
 | E-013 | 2026-10-15 | Erste Aktie der Watchlist: **Siemens Energy** (ENR.DE) | Nutzerwunsch | Nutzer |
 | E-014 | 2026-10-15 | Push direkt auf `main` für den ersten Stand | Repo war leer | Claude |
+| E-015 | 2026-10-15 | **Ersetzt den Faktor in E-004:** Stop mit **3 × ATR** statt 2 × ATR (Anfangsstop und Nachziehen). Die 10-%-Grenze für den Stop-Abstand (E-003) bleibt | Nutzerwahl nach Lauf 1 (O-001): 2,7 % statt 1,9 % p. a. nach Steuer, halb so viele Trades. Folge: Aktien mit ATR über ≈ 3,3 % des Kurses bekommen meist kein KAUFEN, weil der Stop dann > 10 % entfernt liegt | Nutzer |
