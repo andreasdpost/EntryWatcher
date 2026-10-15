@@ -8,3 +8,4 @@
 | O-004 | Ausführung: Signal am Schluss, Kauf zum Schluss des Folgetags. Live kaufst du am Folgetag zu irgendeinem Kurs | Kleine Abweichung | bekannt |
 | O-005 | Gewinne werden im Backtest nicht reinvestiert (Budget fest 1.000 €), Buy & Hold dagegen wächst mit | Benachteiligt die Regeln etwas | bewusst so (feste Größe ist die Vorgabe) |
 | O-006 | Abgleich `positions.json` mit Scalable automatisch (wie in scalableBrokerAnalyzer) | Bequemlichkeit | später |
+| O-007 | Keine Obergrenze für die Zahl gleichzeitiger Positionen bzw. das Satelliten-Budget insgesamt. Am 2026-10-15 waren 5 von 10 Aktien „KAUFEN ERLAUBT“ (5.000 €) | Ohne Grenze wächst der Satellit über die geplanten 10 % | offen |

@@ -49,3 +49,41 @@ annual_allowance = 0.0
 ticker = "ENR.DE"
 name = "Siemens Energy"
 note = "Korrektur seit Hoch 04/2026 (−32 %), warten auf Trendwende"
+
+[[watchlist]]
+ticker = "RHM.DE"
+name = "Rheinmetall"
+note = "Eine Aktie kostet > 1.000 € — passt nur mit eigenem max_position_eur"
+
+[[watchlist]]
+ticker = "APC.DE"
+name = "Apple"
+
+[[watchlist]]
+ticker = "NVD.DE"
+name = "NVIDIA"
+
+[[watchlist]]
+ticker = "MSF.DE"
+name = "Microsoft"
+
+[[watchlist]]
+ticker = "ABEA.DE"
+name = "Alphabet A"
+
+[[watchlist]]
+ticker = "AMZ.DE"
+name = "Amazon"
+
+[[watchlist]]
+ticker = "ASME.DE"
+name = "ASML"
+note = "Eine Aktie kostet > 1.000 € — passt nur mit eigenem max_position_eur"
+
+[[watchlist]]
+ticker = "SAP.DE"
+name = "SAP"
+
+[[watchlist]]
+ticker = "ALV.DE"
+name = "Allianz"
