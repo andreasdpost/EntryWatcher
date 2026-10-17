@@ -65,3 +65,15 @@ def test_app_sends_only_on_status_change(tmp_path):
     assert len(notifier.sent) == 1 and "KAUFEN ERLAUBT" in notifier.sent[0]
     app.run(always=True)
     assert len(notifier.sent) == 2
+
+
+def test_check_neither_sends_nor_saves_state(tmp_path):
+    from entrywatcher.config import WatchItem
+    stock = rising()
+    cfg = config()
+    notifier = Recorder()
+    state = StateStore(tmp_path / "s.json")
+    app = WatchApp(cfg, EntryWatcher(cfg, prices(stock), FakeEarnings(), today(stock)),
+                   PositionTracker(cfg, prices(stock)), NoPositions(), state, notifier)
+    text = app.check([WatchItem("TEST", max_position_eur=500)])
+    assert "KAUFEN ERLAUBT" in text and notifier.sent == [] and state.load() == {}

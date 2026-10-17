@@ -43,6 +43,8 @@ du entscheidest und handelst selbst bei Scalable.
 python -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/pytest -q
 .venv/bin/python run_watch.py --no-telegram     # heutige Prüfung
+.venv/bin/python run_watch.py --check BAYN.DE   # einzelne Aktie prüfen, ohne Watchlist
+.venv/bin/python run_watch.py --check DTE.DE ENR.DE --budget 1500 --max-loss 150
 .venv/bin/python run_backtest.py                # Backtest → reports/backtest.md
 ```
 

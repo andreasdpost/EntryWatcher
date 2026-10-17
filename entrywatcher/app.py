@@ -24,6 +24,16 @@ class WatchApp:
         self._notifier = notifier
         self._fmt = formatter or MessageFormatter()
 
+    def check(self, items) -> str:
+        """Einzelprüfung von Hand: kein Telegram, kein Status gespeichert, Watchlist unberührt."""
+        texts = []
+        for item in items:
+            try:
+                texts.append(self._fmt.assessment(self._watcher.assess(item)))
+            except Exception as exc:
+                texts.append(f"{item.ticker}: Fehler {exc}")
+        return "\n\n".join(texts)
+
     def run(self, always: bool = False) -> str:
         """Prüft alles, sendet Telegram für geänderte Einträge (oder alle mit always), gibt den ganzen Bericht zurück."""
         texts: dict[str, str] = {}
