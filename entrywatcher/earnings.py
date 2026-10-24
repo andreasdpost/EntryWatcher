@@ -5,6 +5,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from datetime import date
 
+from .quiet import quiet_yfinance
+
 
 class EarningsCalendar(ABC):
     @abstractmethod
@@ -17,7 +19,8 @@ class YahooEarningsCalendar(EarningsCalendar):
         try:
             import yfinance as yf
 
-            dates = yf.Ticker(ticker).calendar.get("Earnings Date") or []
+            with quiet_yfinance():
+                dates = yf.Ticker(ticker).calendar.get("Earnings Date") or []
             return dates[0] if dates else None
         except Exception:  # Termin ist ein Zusatz; ohne ihn läuft die Prüfung weiter
             return None

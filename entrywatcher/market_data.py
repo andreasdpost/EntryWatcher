@@ -11,6 +11,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from .quiet import quiet_yfinance
+
 COLUMNS = ["Open", "High", "Low", "Close"]
 
 
@@ -23,7 +25,8 @@ class YahooPriceSource(PriceSource):
     def ohlc(self, ticker: str, start: str = "2000-01-01") -> pd.DataFrame:
         import yfinance as yf  # erst hier: Tests brauchen kein Netz
 
-        raw = yf.download(ticker, start=start, auto_adjust=True, progress=False)
+        with quiet_yfinance():
+            raw = yf.download(ticker, start=start, auto_adjust=True, progress=False)
         if raw is None or raw.empty:
             raise RuntimeError(f"Yahoo lieferte keine Daten für {ticker}")
         if isinstance(raw.columns, pd.MultiIndex):
