@@ -1,12 +1,12 @@
 {
   "watch:ABEA.DE": "WARTEN",
   "watch:ALV.DE": "WARTEN",
-  "watch:AMZ.DE": "WARTEN",
+  "watch:AMZ.DE": "KAUFEN ERLAUBT",
   "watch:APC.DE": "KAUFEN ERLAUBT",
   "watch:ASME.DE": "WARTEN",
   "watch:ENR.DE": "WARTEN",
   "watch:MSF.DE": "KAUFEN ERLAUBT",
-  "watch:NVD.DE": "KAUFEN ERLAUBT",
+  "watch:NVD.DE": "WARTEN",
   "watch:RHM.DE": "WARTEN",
   "watch:SAP.DE": "WARTEN"
 }
